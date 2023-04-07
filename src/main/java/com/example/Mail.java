@@ -2,8 +2,8 @@ package com.example;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
+// import javax.activation.DataSource;
+// import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
 import javax.mail.BodyPart;
 import javax.mail.Message;
@@ -61,9 +61,7 @@ public class Mail {
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
             message.setSubject("PDF Test Mail");
 
-
-
-            String attachFile = "D:/pdf_mail/src/Major project.pdf";
+            // String attachFile = "D:/pdf_mail/src/Major project.pdf";
             BodyPart bodyPart = new MimeBodyPart();
             try {
 
@@ -72,7 +70,7 @@ public class Mail {
                 multipart.addBodyPart(bodyPart);
                 
                 ByteArrayDataSource source = new ByteArrayDataSource(createPdf(), "application/pdf");
-                DataSource dataSource = new FileDataSource(attachFile);
+                // DataSource dataSource = new FileDataSource(attachFile);
                 DataHandler dataHandler = new DataHandler(source);
 
                 bodyPart = new MimeBodyPart();
